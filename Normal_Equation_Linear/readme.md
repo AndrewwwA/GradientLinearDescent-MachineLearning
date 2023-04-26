@@ -1,0 +1,1 @@
+Efficient algorithm that only works for linear 1 parameter values
