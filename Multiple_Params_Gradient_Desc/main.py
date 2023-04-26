@@ -39,15 +39,16 @@ def gradientDesc(x, y, wInt, bInt, alpha, numTimes):
     w = copy.deepcopy(wInt)
     b = bInt
     
-    # CHANGES OVER 10k ITERATIONS
+    # CHANGES OVER 10k ITERATIONS can be changed by "alpha"
     for i in range(numTimes):
         gradW, gradB = computeGradient(x, y, w, b)
         
         w = w - alpha * gradW
         b = b - alpha * gradB
         
-        # if i% math.ceil(numTimes / 10) == 0:
-        #     print(f"Iteration {i}")
+        # Prints  iterations 10 times no matter the iteration amount
+        if i% math.ceil(numTimes / 10) == 0:
+            print(f"Iteration {i}")
 
     return w, b
     
